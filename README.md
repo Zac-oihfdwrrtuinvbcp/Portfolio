@@ -1,73 +1,93 @@
-# React + TypeScript + Vite
+# Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, modern portfolio website built with Vite, React, TypeScript, and Tailwind CSS to showcase your projects.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vite** - Fast build tool and dev server
+- **React** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
 
-## React Compiler
+## 📦 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js 16+ installed
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Dependencies are already installed. If you need to reinstall:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+The site will be available at `http://localhost:5173/`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The production-ready files will be in the `dist` folder.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## 🎨 Customization
+
+Edit `src/App.tsx` to customize:
+
+1. **Your Information**: Update your name, GitHub, and LinkedIn links
+2. **Projects**: Modify the `projects` array with your actual projects
+3. **Colors**: Adjust Tailwind classes for different color schemes
+4. **Layout**: Modify the component structure as needed
+
+## 📁 Project Structure
+
+```
+Portfolio/
+├── src/
+│   ├── App.tsx          # Main portfolio component
+│   ├── App.css          # Custom styles (if needed)
+│   ├── index.css        # Tailwind imports
+│   └── main.tsx         # App entry point
+├── public/              # Static assets
+├── index.html           # HTML template
+├── tailwind.config.js   # Tailwind configuration
+├── postcss.config.js    # PostCSS configuration
+└── package.json         # Dependencies
+```
+
+## 🚢 Deployment
+
+This static site can be deployed to:
+
+- **Vercel**: Connect your GitHub repo for automatic deployments
+- **Netlify**: Drag & drop the `dist` folder or connect to GitHub
+- **GitHub Pages**: Use GitHub Actions to deploy
+
+### Quick Deploy to Vercel
+
+```bash
+npm install -g vercel
+npm run build
+vercel --prod
+```
+
+## 📝 License
+
+MIT - Feel free to use this template for your own portfolio!
