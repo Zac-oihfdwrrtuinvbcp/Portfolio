@@ -1,11 +1,11 @@
 import { ProjectCard } from "../components/ProjectCard";
-import bookiImage from "../assets/booki.png";
-import sophieBluelImage from "../assets/sophieBluel.png";
-import ninaCarducciImage from "../assets/ninaCarducci.png";
-import kasaImage from "../assets/kasa.png";
-import monVieuxGrimoireImage from "../assets/monVieuxGrimoire.png";
-import beyondTheCloudsImage from "../assets/beyondTheClouds.png";
-import outlanderFactoryImage from "../assets/outlanderFactory.png";
+import bookiImage from "../assets/booki.webp";
+import sophieBluelImage from "../assets/sophieBluel.webp";
+import ninaCarducciImage from "../assets/ninaCarducci.webp";
+import kasaImage from "../assets/kasa.webp";
+import monVieuxGrimoireImage from "../assets/monVieuxGrimoire.webp";
+import beyondTheCloudsImage from "../assets/beyondTheClouds.webp";
+import outlanderFactoryImage from "../assets/outlanderFactory.webp";
 import { Button } from "../components/Button";
 import { useState } from "react";
 
@@ -24,7 +24,7 @@ export function Portfolio() {
     {
       title: "Mon Vieux Grimoire: Back-end for a Book Rating Website",
       description:
-        "As a back-end developer, I designed and delivered the API for a book rating website using Node.js/Express and MongoDB/Mongoose: implementation of the Book model (complete CRUD), secure JWT authentication with password hashing, upload management via Multer and image optimization with Sharp, rating endpoints with proper controls.",
+        'As a freelance back-end developer based in Lille, I collaborated with a senior front-end developer on the project “Mon Vieux Grimoire”, a website for referencing and rating books for a small local bookstore chain. While the front-end was developed in React, my role was to design and implement the back-end API, managing users, books, and ratings according to the technical specifications provided.\n I designed and delivered the API using Node.js/Express and MongoDB/Mongoose: implementation of the Book model (complete CRUD), secure JWT authentication with password hashing, upload management via Multer and image optimization with Sharp, rating endpoints with proper controls.',
       link: "https://github.com/Zac-oihfdwrrtuinvbcp/grimoire-backend",
       website: "https://p6-grimoire.zac-darmoise.ovh/",
       tags: ["Node.js", "Express", "MongoDB", "RESTful API"],
