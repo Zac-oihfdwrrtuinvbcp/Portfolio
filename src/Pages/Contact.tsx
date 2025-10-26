@@ -1,3 +1,6 @@
+import { ContactForm } from "../components/ContactForm";
+
+
 export function Contact() {
   return (
     <section className="max-w-4xl mx-auto">
@@ -7,6 +10,8 @@ export function Contact() {
           <p className="text-lg"> 
             Feel free to reach out through any of the following channels:
           </p>
+
+          <ContactForm />
           
           <div className="space-y-4 mt-8">
             <a

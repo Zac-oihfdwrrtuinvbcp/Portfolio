@@ -4,11 +4,12 @@ import { Link, useLocation } from 'react-router-dom'
 interface NavButtonProps {
   children: React.ReactNode
   to: string
+  isActive?: boolean
 }
 
-export function NavButton({ children, to }: NavButtonProps) {
+export function NavButton({ children, to, isActive }: NavButtonProps) {
   const location = useLocation()
-  const isActive = location.pathname === to
+  isActive = isActive ?? location.pathname === to
 
   return (
     <Link

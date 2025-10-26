@@ -5,6 +5,7 @@ import ninaCarducciImage from "../assets/ninaCarducci.png";
 import kasaImage from "../assets/kasa.png";
 import monVieuxGrimoireImage from "../assets/monVieuxGrimoire.png";
 import beyondTheCloudsImage from "../assets/beyondTheClouds.png";
+import outlanderFactoryImage from "../assets/outlanderFactory.png";
 import { Button } from "../components/Button";
 import { useState } from "react";
 
@@ -21,23 +22,23 @@ interface Project {
 export function Portfolio() {
   const projects: Project[] = [
     {
-      title: "BOOKI: Travel Agency Homepage",
+      title: "Mon Vieux Grimoire: Back-end for a Book Rating Website",
       description:
-        "First project completed during my training at OpenClassrooms. This is a homepage for a fictional travel agency called 'Booki', designed using HTML and CSS. The layout is responsive, ensuring an optimal user experience across various devices.",
-      link: "https://github.com/Zac-oihfdwrrtuinvbcp/booki-starter-code",
-      website: "https://zac-oihfdwrrtuinvbcp.github.io/booki-starter-code/",
-      tags: ["HTML", "CSS"],
-      image: bookiImage,
+        "As a back-end developer, I designed and delivered the API for a book rating website using Node.js/Express and MongoDB/Mongoose: implementation of the Book model (complete CRUD), secure JWT authentication with password hashing, upload management via Multer and image optimization with Sharp, rating endpoints with proper controls.",
+      link: "https://github.com/Zac-oihfdwrrtuinvbcp/grimoire-backend",
+      website: "https://p6-grimoire.zac-darmoise.ovh/",
+      tags: ["Node.js", "Express", "MongoDB", "RESTful API"],
+      image: monVieuxGrimoireImage,
       type: "Web Development",
     },
     {
-      title: "Sophie Bluel Portfolio: Dynamic Javascript Web Page",
+      title: "Kasa: Real Estate Rental Web Application",
       description:
-        "As a front-end developer, I participated in creating a portfolio site by working on responsive integration, JavaScript user interactions, and back-end connectivity. I developed a secure login page and a media upload modal, ensuring performance, accessibility, and code clarity.",
-      link: "https://github.com/Zac-oihfdwrrtuinvbcp/Portfolio-architecte-sophie-bluel",
-      website: "https://p3-sophie-bluel.zac-darmoise.ovh/",
-      tags: ["JavaScript", "API Communication"],
-      image: sophieBluelImage,
+        "As a front-end developer, I initiated and built a real estate rental application with React (Vite + React Router stack), following responsive Figma mockups. I developed reusable components (banner, card, Slideshow with circular navigation, animated Collapse), managed state and routes, consumed JSON data while awaiting the API, and established a robust code structure. The work focused on accessibility, performance (loading, logical breakdowns), error handling, and CSS quality, with Sass for a modular and maintainable style foundation.",
+      link: "https://github.com/Zac-oihfdwrrtuinvbcp/kasa-app",
+      website: "https://p5-kaza.zac-darmoise.ovh/",
+      tags: ["React", "React Router", "CSS Sass", "Vite"],
+      image: kasaImage,
       type: "Web Development",
     },
     {
@@ -52,25 +53,26 @@ export function Portfolio() {
       type: "Web Development",
     },
     {
-      title: "Kasa: Real Estate Rental Web Application",
+      title: "Sophie Bluel Portfolio: Dynamic Javascript Web Page",
       description:
-        "As a front-end developer, I initiated and built a real estate rental application with React (Vite + React Router stack), following responsive Figma mockups. I developed reusable components (banner, card, Slideshow with circular navigation, animated Collapse), managed state and routes, consumed JSON data while awaiting the API, and established a robust code structure. The work focused on accessibility, performance (loading, logical breakdowns), error handling, and CSS quality, with Sass for a modular and maintainable style foundation.",
-      link: "https://github.com/Zac-oihfdwrrtuinvbcp/kasa-app",
-      website: "https://p5-kaza.zac-darmoise.ovh/",
-      tags: ["React", "React Router", "CSS Sass", "Vite"],
-      image: kasaImage,
+        "As a front-end developer, I participated in creating a portfolio site by working on responsive integration, JavaScript user interactions, and back-end connectivity. I developed a secure login page and a media upload modal, ensuring performance, accessibility, and code clarity.",
+      link: "https://github.com/Zac-oihfdwrrtuinvbcp/Portfolio-architecte-sophie-bluel",
+      website: "https://p3-sophie-bluel.zac-darmoise.ovh/",
+      tags: ["JavaScript", "API Communication"],
+      image: sophieBluelImage,
       type: "Web Development",
     },
     {
-      title: "Mon Vieux Grimoire: Back-end for a Book Rating Website",
+      title: "BOOKI: Travel Agency Homepage",
       description:
-        "As a back-end developer, I designed and delivered the API for a book rating website using Node.js/Express and MongoDB/Mongoose: implementation of the Book model (complete CRUD), secure JWT authentication with password hashing, upload management via Multer and image optimization with Sharp, rating endpoints with proper controls.",
-      link: "https://github.com/Zac-oihfdwrrtuinvbcp/grimoire-backend",
-      website: "https://p6-grimoire.zac-darmoise.ovh/",
-      tags: ["Node.js", "Express", "MongoDB", "RESTful API"],
-      image: monVieuxGrimoireImage,
+        "First project completed during my training at OpenClassrooms. This is a homepage for a fictional travel agency called 'Booki', designed using HTML and CSS. The layout is responsive, ensuring an optimal user experience across various devices.",
+      link: "https://github.com/Zac-oihfdwrrtuinvbcp/booki-starter-code",
+      website: "https://zac-oihfdwrrtuinvbcp.github.io/booki-starter-code/",
+      tags: ["HTML", "CSS"],
+      image: bookiImage,
       type: "Web Development",
     },
+
     {
       title: "Beyond the cloud: Unreal engine multiplayer game",
       description:
@@ -80,13 +82,22 @@ export function Portfolio() {
       image: beyondTheCloudsImage,
       type: "Game Development",
     },
+    {
+      title: "Outlander Factory: 2D Custom game engine game",
+      description:
+        "End of first year group project at creajeux. Game codded with a custom 2D game engine in csfml C. The game is a manager sim where you are building up a factory akin to factorio.",
+      link: "https://zacdarmoise.itch.io/outlander-factory",
+      tags: ["C", "CSFML", "Game Development"],
+      image: outlanderFactoryImage,
+      type: "Game Development",
+    },
   ];
 
-
   const [currentType, setCurrentType] = useState("All");
-  const filteredProjects = currentType === "All"
-    ? projects
-    : projects.filter(project => project.type === currentType);
+  const filteredProjects =
+    currentType === "All"
+      ? projects
+      : projects.filter((project) => project.type === currentType);
 
   return (
     <section className="space-y-8">
@@ -109,14 +120,29 @@ export function Portfolio() {
         </div>
       </header>
       <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
-      <div className="flex justify-center mb-8 gap-4">
-        <Button onClick={() => setCurrentType("All")} icon="fa-solid fa-filter">
-  All
+      <div className="flex flex-wrap justify-center mb-8 gap-4">
+        <Button
+          onClick={() => setCurrentType("All")}
+          isActive={currentType === "All"}
+          disableBackground={true}
+          icon="fa-solid fa-filter"
+        >
+          All
         </Button>
-        <Button onClick={() => setCurrentType("Web Development")} icon="fa-solid fa-code">
+        <Button
+          onClick={() => setCurrentType("Web Development")}
+          isActive={currentType === "Web Development"}
+          disableBackground={true}
+          icon="fa-solid fa-code"
+        >
           Web Development
         </Button>
-        <Button onClick={() => setCurrentType("Game Development")} icon="fa-solid fa-gamepad">
+        <Button
+          onClick={() => setCurrentType("Game Development")}
+          isActive={currentType === "Game Development"}
+          disableBackground={true}
+          icon="fa-solid fa-gamepad"
+        >
           Game Development
         </Button>
       </div>

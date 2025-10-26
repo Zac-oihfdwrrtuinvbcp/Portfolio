@@ -12,7 +12,7 @@ function App() {
         <div className="sticky top-0 py-4 flex justify-center">
           <NavBar />
         </div>
-        <div className="mx-20 px-4 py-16">
+        <div className="lg:mx-20 px-4 py-16">
           <Routes>
             <Route path="/" element={<Portfolio />} />
             <Route path="/about" element={<About />} />

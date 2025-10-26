@@ -3,11 +3,16 @@ interface ButtonProps {
   icon: string;
   children: React.ReactNode;
   onClick?: () => void;
+  isActive?: boolean;
+  disableBackground?: boolean;
 }
 
-export function Button({ href, icon, children, onClick }: ButtonProps) {
-  const className = "inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-3xl transition-colors shadow-l font-medium self-start";
-  
+export function Button({ href, icon, children, onClick, isActive, disableBackground }: ButtonProps) {
+  const baseClassName = "inline-flex items-center gap-2 px-6 py-3 rounded-3xl transition-colors font-medium self-start cursor-pointer";
+  const backgroundClassName = disableBackground ? "hover:bg-zinc-800 hover:shadow-l" : "bg-zinc-800 hover:bg-zinc-700 shadow-l";
+  const activeClassName = isActive ? "text-zinc-100 bg-zinc-800 shadow-l" : "";
+  const className = `${baseClassName} ${backgroundClassName} ${activeClassName}`;
+
   if (href) {
     return (
       <a
